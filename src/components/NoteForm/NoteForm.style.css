@@ -1,0 +1,68 @@
+.c-note-form{
+    width: 480px;
+    border: 1px solid black;
+    border-radius: 7px;
+    box-shadow: 2px 4px 6px rgba(red, green, blue, alpha);
+    padding: 24px;
+    transition: all 0.25s ease-out;
+}
+
+.c-note-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.note-title-input,
+.note-body-input {
+    padding: 16px;
+    font-size: 14px;
+
+}
+
+.c-color-selector{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 16px;
+
+}
+
+.c-color-selector__item{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: aqua;
+}
+
+.c-color-selector__item{
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.c-color-selector__item--selected{
+    border-width: 3px;
+}
+
+.c-note-title {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+.c-note-body {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.c-color-selector__item--white{
+    background-color: white;
+}
+
+.c-color-selector__item--pink{
+    background-color: pink;
+}
+
+.c-color-selector__item--grey{
+    background-color: grey;
+}
