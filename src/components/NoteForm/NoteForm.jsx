@@ -30,8 +30,8 @@ function NoteForm() {
    */
   const onBodyChange = (value = "") => {
     setFormData({
-        ...formData,
-        body: value,
+      ...formData,
+      body: value,
     });
   };
 
@@ -46,6 +46,7 @@ function NoteForm() {
    * @description - on form submit, create new note
    * @param {Event} evt
    */
+
   const onSubmit = (evt) => {
     evt.preventDefault();
 
@@ -57,7 +58,15 @@ function NoteForm() {
     }
 
     //Saving
-    localStorage.setItem("catatan", JSON.stringify(formData));
+    const existingData = localStorage.getItem("notes");
+    if (!existingData) {
+      const payload = [{ ...formData }];
+      localStorage.setItem("notes", JSON.stringify(payload));
+    } else {
+      const currentData = JSON.parse(existingData);
+      const payload = [{...formData},  ...currentData];
+      localStorage.setItem("notes", JSON.stringify(payload));
+    }
 
     //Clean form
     setFormData({ ...INITIAL_STATES.formData });
